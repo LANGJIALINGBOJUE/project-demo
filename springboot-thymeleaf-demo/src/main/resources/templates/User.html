@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <!-- 即 Controller 中的 title 属性 -->
+    <title th:text="${title}"></title>
+
+</head>
+<body>
+<!-- 即 Controller 中的 desc 属性 -->
+<h1 th:text="${desc}" th:align="center"></h1>
+
+<!-- 即 Controller 中的 author 信息 -->
+<h2 th:align="center">=====作者信息=====</h2>
+<p th:align="center" th:text="${author?.id}"></p>
+<p th:align="center" th:text="${author?.name}"></p>
+<p th:align="center" th:text="${author?.password}"></p>
+<p th:align="center" th:text="${author?.age}"></p>
+</body>
+</html>
