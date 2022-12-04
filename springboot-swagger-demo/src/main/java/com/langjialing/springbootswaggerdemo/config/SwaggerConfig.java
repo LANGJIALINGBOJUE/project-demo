@@ -1,4 +1,4 @@
-package com.example.mybatisdemo0.config;
+package com.langjialing.springbootswaggerdemo.config;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
@@ -21,6 +21,9 @@ import java.lang.reflect.Field;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * @author 郎家岭伯爵
+ */
 @Configuration
 @EnableOpenApi
 public class SwaggerConfig {
@@ -30,7 +33,7 @@ public class SwaggerConfig {
                 .apiInfo(apiInfo()).enable(true)
                 .select()
                 //apis： 添加swagger接口提取范围
-                .apis(RequestHandlerSelectors.basePackage("com.example.mybatisdemo0.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.langjialing.springbootswaggerdemo.controller"))
                 .paths(PathSelectors.any())
                 .build();
 
@@ -39,19 +42,13 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("郎家岭伯爵")
-                .description("spring boot整合knife4j")
-                .contact(new Contact("郎家岭伯爵", "https://www.xn--jfxm65f.com","1830879596@qq.com"))
+                .title("郎家岭伯爵的Swagger项目")
+                .description("这是郎家岭伯爵的Swagger测试项目。")
+                .contact(new Contact("郎家岭伯爵", "https://www.xn--jfxm65f.com", "1830879596@qq.com"))
                 .version("v1.0")
                 .build();
     }
 
-    /**
-     * 这里是为了解决Spring Boot与Swagger的版本冲突。
-     * 同时还需要在application.properties中添加一行配置项：
-     *  spring.mvc.pathmatch.matching-strategy=ant_path_matcher
-     * @return
-     */
     @Bean
     public static BeanPostProcessor springfoxHandlerProviderBeanPostProcessor() {
         return new BeanPostProcessor() {
@@ -84,5 +81,4 @@ public class SwaggerConfig {
             }
         };
     }
-
 }

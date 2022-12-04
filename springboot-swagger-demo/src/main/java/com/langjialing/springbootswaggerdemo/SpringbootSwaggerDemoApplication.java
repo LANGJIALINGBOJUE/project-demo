@@ -1,13 +1,13 @@
-package com.example.mybatisdemo0;
+package com.langjialing.springbootswaggerdemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MybatisDemo0Application {
+public class SpringbootSwaggerDemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MybatisDemo0Application.class, args);
+        SpringApplication.run(SpringbootSwaggerDemoApplication.class, args);
     }
 
 }
